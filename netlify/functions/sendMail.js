@@ -13,12 +13,12 @@ exports.handler = async (event, context) => {
 
   try {
     const response = await axios.post(
-      `https://api.mailgun.net/v3/https://app.mailgun.com/app/sending/domains/sandboxda11485f93964619b3377c277b3e6e5f.mailgun.org/messages`,
+      `https://api.mailgun.net/v3/sandboxda11485f93964619b3377c277b3e6e5f.mailgun.org/messages`,
       mailgunData,
       {
         auth: {
           username: "api",
-          password: "bb9b86482012c493668dd3f1c1975aa8-1900dca6-f85545e9",
+          password: "pass",
         },
       }
     );
