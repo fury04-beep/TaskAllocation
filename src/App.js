@@ -4,6 +4,7 @@ import Select from "react-select";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 import "./style.css";
 
@@ -198,6 +199,25 @@ function Menu() {
     }
   }
 
+  function handleSubmit() {
+    const data = {
+      name: "Andrew",
+      email: "fandrew@amazon.com",
+      message: "Hello, this is a test message!",
+    };
+
+    axios
+      .post("/sendMail", data)
+      .then((response) => {
+        console.log("Email sent successfully:", response.data);
+        // Add any additional logic after successful email submission
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        // Handle the error appropriately
+      });
+  }
+
   const currentDate = new Date();
 
   const lstOfProjects = [
@@ -367,7 +387,9 @@ function Menu() {
           <button className="rowBtn" onClick={addRow}>
             Add Row
           </button>
-          <button className="submitBtn">Submit</button>
+          <button className="submitBtn" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       )}
     </div>
