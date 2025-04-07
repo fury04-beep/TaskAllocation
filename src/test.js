@@ -5,7 +5,7 @@ const mg = mailgun.client({
   username: "api",
   key:
     process.env.MAILGUN_API_KEY ||
-    "062c0d78563f0b026409a6ffedf9a202-78f6ccbe-6498a8b1",
+   
 });
 
 mg.messages
